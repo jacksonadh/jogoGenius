@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@700&family=Mukta:wght@400;500&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Mukta', sans-serif;
+}
+
+body {
+  background-color: #181818;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.genius {
+  display: grid;
+  grid-template-areas: 'blue green'
+  'yellow red';
+
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 100%;
+
+  grid-gap: 10px;
+  width: 700px;
+  height: 700px
+}
+
+.blue {
+  grid-area: blue;
+  background-color: blue;
+  border-top-left-radius: 100%;
+}
+
+.green {
+  grid-area: green;
+  background-color: green;
+  border-top-right-radius: 100%;
+}
+
+.yellow {
+  grid-area: yellow;
+  background-color: yellow;
+  border-bottom-left-radius: 100%;
+}
+
+.red {
+  grid-area: red;
+  background-color: red;
+  border-bottom-right-radius: 100%;
+}
+
+.selected {
+    opacity: 0.8;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+
+}
