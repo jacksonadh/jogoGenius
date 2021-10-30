@@ -6,6 +6,7 @@ const blue = document.querySelector('.blue'); //0
 const green = document.querySelector('.green'); //1
 const yellow = document.querySelector('.yellow'); //2
 const red = document.querySelector('.red'); //3
+const resultado = document.querySelector('.score');
 
 let shuffleOrder = () => {
   let colorOrder = Math.floor(Math.random() * 4);
@@ -37,8 +38,10 @@ let checkOrder = () => {
     }
   }
   if (clickedOrder.length == order.length) {
-    alert(`Pontuação ${score}\n Você acertou! Iniciando proximo nível!`)
+    alert(`Pontuação ${score}\n Você acertou! Iniciando proximo nível!`);
+    resultado.innerText = `Score: ${score}`;
     nextLevel();
+
   }
 }
 
@@ -79,6 +82,7 @@ let lose = () => {
 let playGame = () => {
   alert('Bem vindo ao Genius! Vamos começar?')
   score = 0;
+  resultado.innerText = `Score: ${score}`;
   nextLevel();
 }
 
@@ -87,4 +91,3 @@ green.onclick = () => click(1);
 yellow.onclick = () => click(2);
 red.onclick = () => click(3);
 
-playGame();
