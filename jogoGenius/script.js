@@ -26,7 +26,7 @@ let lightColor = (element, number) => {
 
   setTimeout(() => {
     element.classList.remove('selected')
-  });
+  }, number - 150);
 }
 
 let checkOrder = () => {
@@ -41,3 +41,50 @@ let checkOrder = () => {
     nextLevel();
   }
 }
+
+let click = (color) => {
+  clickedOrder[clickedOrder.length] = color;
+  creatColorElement(color).classList.add('selected');
+
+  setTimeout(() => {
+    creatColorElement(color).classList.remove('selected');
+    checkOrder();
+  })
+}
+
+let creatColorElement = (color) => {
+  if (color == 0) {
+    return blue;
+  } else if (color == 1) {
+    return green;
+  } else if (color == 2) {
+    return yellow;
+  } else if (color == 3) {
+    return red;
+  }
+}
+
+let nextLevel = () => {
+  score++;
+  shuffleOrder();
+}
+
+let lose = () => {
+  alert(`Pontuação: ${score}!\nVocê perdeu o jogo\nClique em Ok para iniciar o jogo`);
+  order = [];
+  clickedOrder = [];
+  playGame();
+}
+
+let playGame = () => {
+  alert('Bem vindo ao Genius! Vamos começar?')
+  score = 0;
+  nextLevel();
+}
+
+blue.onclick = () => click(0);
+green.onclick = () => click(1);
+yellow.onclick = () => click(2);
+red.onclick = () => click(3);
+
+playGame();

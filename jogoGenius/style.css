@@ -57,9 +57,8 @@ main {
 }
 
 .selected {
-    opacity: 0.8;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-
+    opacity: 0.4;
+    -webkit-transform: perspective(5px) translateZ(0);
+    transform: perspective(5px) translateZ(0);
+    box-shadow: 0 0 1px rgba(255, 7, 160, 0);
 }
